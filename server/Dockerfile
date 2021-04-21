@@ -1,0 +1,15 @@
+FROM python:3.8-slim
+EXPOSE 8000
+
+ENV  \
+    #python
+    PYTHONFAULTHANDLER=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONHASHSEED=random \
+    PYTHONDONTWRITEBYTECODE=1
+
+WORKDIR /pr9
+COPY . .
+
+CMD ["python3", "server.py"]
+
